@@ -1,3 +1,7 @@
+.formContainer{
+    margin: 1rem;
+}
+
 .formGroup{
     display: grid;
     gap: 20px;
@@ -9,6 +13,12 @@
     box-shadow: 0 0 3px var(--text-color);
     color: var(--text-color);
     background-color: var(--background-color);
+}
+
+.idInput{
+    border: none;
+    min-width: 280px;
+    flex: 0 0 auto;
 }
 
 .animalInput {

@@ -39,12 +39,13 @@ export default function IntakeForm() {
 
                 <div className={styles.animalInput}>
                     <label htmlFor="id">Animal ID</label>
-                    <input type="text" id="id" value={formData.id} disabled className={styles.input} />
+                    <input type="text" id="id" value={formData.id} disabled className={`${styles.input} ${styles.idInput}`} />
                 </div>
 
                 <div className={styles.animalInput}>
                     <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required className={styles.input} />
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} 
+                    required className={styles.input} />
                 </div>
 
                 <fieldset className={styles.animalInput}>
@@ -65,14 +66,14 @@ export default function IntakeForm() {
 
                 <div className={styles.animalInput}>
                     <label htmlFor="weight">Weight (lbs)</label>
-                    <input type="number" id="weight" name="weight" value={formData.weight} onChange={handleChange} min="0" step="0.1" 
-                    className={styles.input} placeholder="optional"/>
+                    <input type="number" id="weight" name="weight" value={formData.weight} onChange={handleChange} min="0" 
+                    step="0.1" className={styles.input} placeholder="optional"/>
                 </div>
 
                 <div className={styles.animalInput}>
                     <label htmlFor="intakeDate">Intake Date</label>
-                    <input type="date" id="intakeDate" name="intakeDate" value={formData.intakeDate} onChange={handleChange} required 
-                    className={styles.input} />
+                    <input type="date" id="intakeDate" name="intakeDate" value={formData.intakeDate} onChange={handleChange} 
+                    required className={styles.input} />
                 </div>
 
                 <div className={styles.animalInput}>
@@ -93,7 +94,8 @@ export default function IntakeForm() {
 
                 <div className={styles.animalInput}>
                     <label htmlFor="notes">Notes</label>
-                    <textarea id="notes" name="notes" value={formData.notes} onChange={handleChange} className={styles.textarea} />
+                    <textarea id="notes" name="notes" value={formData.notes} onChange={handleChange} 
+                    className={styles.textarea} />
                 </div>
 
                 <div className={styles.animalInput}>
@@ -102,7 +104,7 @@ export default function IntakeForm() {
                     className={styles.fileInput} />
                 </div>
 
-                <Button className={styles.submitBtn} onClick={handleSubmit}>Submit</Button>
+                <Button className={styles.submitBtn}>Submit</Button>
             </div>
 
         </form>
