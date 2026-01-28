@@ -1,0 +1,16 @@
+.btn {
+    background: var(--primary-color);
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    box-shadow: 3px 3px 6px var(--text-color);
+    cursor: pointer;
+}
+
+.btn:hover, .btn:focus-visible{
+    transform: translateY(-5px);
+    outline: none;
+    box-shadow: 6px 6px 10px black;
+}
