@@ -7,8 +7,8 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 10px 20px;
-    border-radius: 8px;
-    background-color: #f8f9fa;
+    border-radius: 40px;
+    background-color: var(--background-color);
 }
 
 .navbarMenu{
@@ -19,19 +19,23 @@
 
 .navbarLink, .navbarBrand{
     text-decoration: none;
-    color: #1d375d ;
     font-weight: bold;
     transition: transform 0.2s ease;
     display: inline-block;
     font-size: 1.1rem;
+    color: var(--text-color); 
     letter-spacing: .1rem;
     cursor: pointer;
 }
 
+.navbarLink:visited, .navbarBrand:visited{
+    color: var(--visited-link);
+}
+
 .navbarLink:hover, .navbarLink:focus-visible, .navbarBrand:hover, .navbarBrand:focus-visible{
-    color: #0891eb ;
+    color: var(--primary-color);
     font-size: 1.2rem;
     transform: translateY(-5px);
     outline: none;
-    text-shadow: 1px 1px 4px grey;
+    text-shadow: 1px 1px 4px #808080bc;
 }

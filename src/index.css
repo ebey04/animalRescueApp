@@ -1,0 +1,27 @@
+:root{
+    --background-color: #eef3f6;
+    --primary-color: #6FA3B8;
+    --secondary-color: #3F5F6B;
+    --text-color: #1F3E46;
+    --visited-link: #8C7AAE;
+}
+
+*{
+    font-family: sans-serif;
+}
+
+h1,h2{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1{
+    font-size: clamp(2rem, 8vw, 4rem);
+}
+
+h2{
+    font-size: clamp(1.5rem, 6vw, 3rem);
+}
+
+p{
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}

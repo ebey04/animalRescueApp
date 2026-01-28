@@ -1,4 +1,5 @@
 import styles from './Home.module.css';
+
 import { useState } from 'react';
 
 export default function Home() {
@@ -35,7 +36,7 @@ export default function Home() {
                                 {animal.image && <img src={animal.image} alt={animal.name} className={styles.animalImage} />}
                                 <h3 className={styles.animalName}>{animal.name}</h3>
                                 <p className={styles.animalType}>{animal.type}</p>
-                                <div style={{ color: statusColors[animal.status], fontWeight: 'bold' }}>
+                                <div style={{ color: statusColors[animal.status], fontWeight: 'bold', letterSpacing: '1.75px' }}>
                                     {animal.status.toUpperCase()}
                                 </div>
                                 <p className={styles.cardDescription}>{animal.notes}</p>
