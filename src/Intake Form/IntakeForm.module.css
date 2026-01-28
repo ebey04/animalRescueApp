@@ -1,0 +1,36 @@
+.formGroup{
+    display: grid;
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 0 3px var(--text-color);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.animalInput {
+    display: flex;
+    gap: 1rem;
+}
+
+.submitBtn{
+    max-width: fit-content;
+    letter-spacing: .2rem;
+    margin-top: 24px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+fieldset {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 360px;
+}
