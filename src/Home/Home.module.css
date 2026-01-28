@@ -2,6 +2,19 @@ h1, h2{
     color: var(--text-color);
 }
 
+.heroDivider{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    gap: 10rem;
+}
+
+.formBtn{
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    padding: 20px 30px;
+    
+}
+
 .animalsGrid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

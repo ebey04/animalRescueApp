@@ -1,5 +1,5 @@
 import styles from './Home.module.css';
-
+import Button  from '../button/Button.jsx';
 import { useState } from 'react';
 
 export default function Home() {
@@ -25,7 +25,10 @@ export default function Home() {
             <main className={styles.mainContent}>
                 <section className={styles.heroSection}>
                     <h1 className={styles.heroTitle}>Rescuer Dashboard</h1>
-                    <p className={styles.heroSubtitle}>Manage and track animals in your care</p>
+                    <div className={styles.heroDivider}>
+                        <p className={styles.heroSubtitle}>Manage and track animals in your care</p>
+                        <Button className={styles.formBtn}>Intake Form</Button> 
+                    </div>
                 </section>
 
                 <section className={styles.featuredSection} aria-label="Animals by Status">
