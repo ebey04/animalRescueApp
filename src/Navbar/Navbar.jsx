@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className={styles.navbar} role="navigation" aria-label="Main navigation">
             <div className={styles.navbarContainer}>
                 <Link to="/" className={styles.navbarBrand}>
-                    Animal Rescue App
+                    Rescue Track App
                 </Link>
                 <ul className={styles.navbarMenu}>
                     <li className={styles.navbarItem}>
