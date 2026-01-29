@@ -1,0 +1,15 @@
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer p, .footer span{
+    font-size: .75rem;
+}
+
+span{
+    color: var(--text-color);
+    font-style: italic;
+}
