@@ -3,6 +3,10 @@ import styles from './IntakeForm.module.css'
 import Button from '../Button/Button.jsx'
 
 export default function IntakeForm() {
+    const generateId = () =>
+    `ANIMAL-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
+
+
     const [formData, setFormData] = useState({
         id: generateId(),
         name: '',
@@ -16,8 +20,6 @@ export default function IntakeForm() {
         status: ''
     })
 
-    const generateId = () =>
-        `ANIMAL-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
 
 
     const handleChange = (e) => {
@@ -31,13 +33,12 @@ export default function IntakeForm() {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('Form submitted:', formData)
-    }
 
-    setFormData(prev => ({
+        setFormData(prev => ({
         ...initialState,
         id: generateId()
     }))
-
+    }
 
     return (
         <form onSubmit={handleSubmit} className={styles.formContainer}>
