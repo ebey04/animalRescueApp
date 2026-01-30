@@ -2,8 +2,9 @@ import styles from './Dashboard.module.css';
 import Button  from '../button/Button.jsx';
 import { useContext } from 'react';
 import { AnimalsContext } from '../AnimalsContext.jsx';
+import { Link } from 'react-router-dom';
 
-export default function Home() {
+export default function Dashboard() {
     const { animals } = useContext(AnimalsContext);
 
     const statusOrder = { critical: 0, stable: 1, healing: 2, adoptable: 3 };
@@ -39,7 +40,9 @@ export default function Home() {
                                     {animal.status.toUpperCase()}
                                 </div>
                                 <p className={styles.cardDescription}>{animal.notes}</p>
-                                <button className={styles.learnMoreBtn}>View Details</button>
+                                <Link to={`/animals/${animal.id}`} className={styles.learnMoreBtn}>
+                                    View Details
+                                </Link>
                             </article>
                         ))}
                     </div>

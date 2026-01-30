@@ -2,8 +2,11 @@ import styles from './AnimalProfile.module.css';
 import { useState, useContext, useEffect } from 'react';
 import Button from '../Button/Button.jsx';
 import { AnimalsContext } from '../AnimalsContext.jsx';
+import { useParams } from 'react-router-dom';
 
-export default function AnimalProfile({ animalId }) {
+
+export default function AnimalProfile() {
+    const { animalId } = useParams();
     const { animals, updateAnimal, addNote } = useContext(AnimalsContext);
 
     const animal = animals.find(a => a.id === animalId);

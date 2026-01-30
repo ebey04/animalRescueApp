@@ -2,10 +2,11 @@ import { useState } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
 import Navbar from './navbar/Navbar.jsx'
-import Home from './Dashboard/Dashboard.jsx'
+import Dashboard from './Dashboard/Dashboard.jsx'
 import IntakeForm from './Intake Form/IntakeForm.jsx'
 import Footer from './Footer/Footer.jsx'
 import AnimalProfile from './Animal Profile/AnimalProfile'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   
@@ -13,9 +14,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <IntakeForm />
-      <Home />
-      <AnimalProfile animalId={1} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/intake-form" element={<IntakeForm />} />
+        <Route path="/animals" element={<Home />} />
+        <Route path="/animals/:animalId" element={<AnimalProfile />} />
+      </Routes>
       <Footer />
     </>
   )
