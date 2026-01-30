@@ -56,3 +56,36 @@ input:focus-visible, input:hover, select:focus-visible, select:hover{
         margin-bottom: .25rem;
     }
 }
+
+.notesSection{
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 0 4px var(--secondary-color);
+    max-width: 1200px;
+    padding: 0 0 1rem 1rem;
+}
+
+.notesContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 1rem;
+}
+
+.notesContainer Button{
+    font-size: 1rem;
+    padding: .7rem 1.5rem;
+    max-width: fit-content;
+}
+
+.notesList{
+    padding-right: 1rem;
+}
+
+.noteText{
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+}
+.noteDate{
+    font-size: .85rem;
+    color: var(--secondary-color);
+}

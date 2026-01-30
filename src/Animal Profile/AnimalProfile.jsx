@@ -104,21 +104,23 @@ export default function AnimalProfile({ animalId }) {
 
             <div className={styles.notesSection}>
                 <h3>Notes</h3>
-                <div className={styles.notesList}>
-                    {notes.map((note, index) => (
-                        <div key={index} className={styles.note}>
-                            <p className={styles.noteDate}>{note.date}</p>
-                            <p>{note.text}</p>
-                        </div>
-                    ))}
+                <div className={styles.notesContainer}>
+                    <div className={styles.notesList}>
+                        {notes.map((note, index) => (
+                            <div key={index} className={styles.note}>
+                                <p className={styles.noteDate}>{note.date}</p>
+                                <p className={styles.noteText}>{note.text}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <textarea
+                        value={newNote}
+                        onChange={(e) => setNewNote(e.target.value)}
+                        placeholder="Add a new note..."
+                        className={styles.noteInput}
+                    />
+                    <Button onClick={handleAddNote}>Add Note</Button>
                 </div>
-                <textarea
-                    value={newNote}
-                    onChange={(e) => setNewNote(e.target.value)}
-                    placeholder="Add a new note..."
-                    className={styles.noteInput}
-                />
-                <Button onClick={handleAddNote}>Add Note</Button>
             </div>
         </div>
     );
