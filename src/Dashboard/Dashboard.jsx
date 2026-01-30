@@ -1,4 +1,4 @@
-import styles from './Home.module.css';
+import styles from './Dashboard.module.css';
 import Button  from '../button/Button.jsx';
 import { useContext } from 'react';
 import { AnimalsContext } from '../AnimalsContext.jsx';
