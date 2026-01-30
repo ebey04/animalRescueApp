@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <IntakeForm />
-      <Home /> */}
+      <IntakeForm />
+      <Home />
       <AnimalProfile animalId={1} />
       <Footer />
     </>
