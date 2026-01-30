@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { AnimalsContext } from '../AnimalsContext.jsx';
+import {useState, useContext} from 'react'
 import styles from './IntakeForm.module.css'
 import Button from '../Button/Button.jsx'
 
 export default function IntakeForm() {
+    const { addAnimal } = useContext(AnimalsContext);
+
     const generateId = () =>
     `ANIMAL-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
 
-
-    const [formData, setFormData] = useState({
+    const initialState = {
         id: generateId(),
         name: '',
         species: '',
@@ -18,9 +20,9 @@ export default function IntakeForm() {
         intakeDate: new Date().toISOString().split('T')[0],
         diagnosis: '',
         status: ''
-    })
+    };
 
-
+    const [formData, setFormData] = useState(initialState)
 
     const handleChange = (e) => {
         const { name, value, type, files } = e.target
@@ -32,7 +34,7 @@ export default function IntakeForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('Form submitted:', formData)
+        addAnimal(formData);
 
         setFormData(prev => ({
         ...initialState,
