@@ -5,6 +5,7 @@ import Navbar from './navbar/Navbar.jsx'
 import Home from './Home/Home.jsx'
 import IntakeForm from './Intake Form/IntakeForm.jsx'
 import Footer from './Footer/Footer.jsx'
+import AnimalProfile from './Animal Profile/AnimalProfile'
 
 function App() {
   
@@ -12,8 +13,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <IntakeForm />
-      {/* <Home /> */}
+      {/* <IntakeForm />
+      <Home /> */}
+      <AnimalProfile animalId={1} />
       <Footer />
     </>
   )
