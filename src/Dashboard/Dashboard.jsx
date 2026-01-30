@@ -37,13 +37,13 @@ export default function Dashboard() {
                     <div className={styles.animalsGrid}>
                         {sortedAnimals.map((animal) => (
                             <article key={animal.id} className={styles.animalCard}>
-                                {animal.image && <img src={animal.image} alt={animal.name} className={styles.animalImage} />}
+                                {animal.photo && <img src={animal.photo} alt={animal.name} className={styles.animalImage} />}
                                 <h3 className={styles.animalName}>{animal.name}</h3>
-                                <p className={styles.animalType}>{animal.type}</p>
+                                <p className={styles.animalType}>{animal.species}</p>
                                 <div style={{ color: statusColors[animal.status], fontWeight: 'bold', letterSpacing: '1.75px' }}>
                                     {animal.status.toUpperCase()}
                                 </div>
-                                <p className={styles.cardDescription}>{animal.notes}</p>
+                                <p className={styles.cardDescription}>{animal.diagnosis}</p>
                                 <Link to={`/animals/${animal.id}`} className={styles.learnMoreBtn}>
                                     View Details
                                 </Link>

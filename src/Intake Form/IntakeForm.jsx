@@ -28,7 +28,7 @@ export default function IntakeForm() {
         const { name, value, type, files } = e.target
         setFormData(prev => ({
             ...prev,
-            [name]: type === 'file' ? files[0] : value
+            [name]: type === 'file' ? URL.createObjectURL(files[0]) : value
         }))
     }
 
@@ -62,7 +62,7 @@ export default function IntakeForm() {
 
                 <fieldset className={styles.animalInput}>
                     <legend>Species</legend>
-                    {['dog', 'cat', 'bird', 'reptile', 'small mammal'].map(species => (
+                    {['Dog', 'Cat', 'Bird', 'Reptile', 'Small Mammal'].map(species => (
                         <label key={species} className={styles.radioLabel}>
                             <input type="radio" name="species" value={species} onChange={handleChange} required/>
                             {species.charAt(0).toUpperCase() + species.slice(1)}

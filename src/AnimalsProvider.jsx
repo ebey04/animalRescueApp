@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AnimalsContext } from './AnimalsContext';
 
 export function AnimalsProvider({ children }) {
@@ -35,6 +35,13 @@ export function AnimalsProvider({ children }) {
         )
         );
     };
+
+    
+    useEffect(() => {
+  console.log('ANIMALS:', animals);
+}, [animals]);
+
+
 
     return (
         <AnimalsContext.Provider
