@@ -24,7 +24,11 @@ export default function Dashboard() {
                     <h1 className={styles.heroTitle}>Rescuer Dashboard</h1>
                     <div className={styles.heroDivider}>
                         <p className={styles.heroSubtitle}>Manage and track animals in your care</p>
-                        <Button className={styles.formBtn}>Intake Form</Button> 
+                        <Button className={styles.formBtn}>
+                            <Link to="/intake-form" className={styles.formBtn}>
+                                Intake Form
+                            </Link>
+                        </Button>
                     </div>
                 </section>
 

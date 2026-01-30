@@ -15,9 +15,9 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Dashboard />} />
         <Route path="/intake-form" element={<IntakeForm />} />
-        <Route path="/animals" element={<Home />} />
+        <Route path="/animals" element={<Dashboard />} />
         <Route path="/animals/:animalId" element={<AnimalProfile />} />
       </Routes>
       <Footer />
