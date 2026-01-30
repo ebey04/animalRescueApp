@@ -1,14 +1,10 @@
 import styles from './Home.module.css';
 import Button  from '../button/Button.jsx';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { AnimalsContext } from '../AnimalsContext.jsx';
 
 export default function Home() {
-    const [animals] = useState([
-        { id: 1, name: 'Max', type: 'Dog', emoji: '🐕', status: 'critical', notes: 'Injured leg' },
-        { id: 2, name: 'Luna', type: 'Cat', emoji: '🐱', status: 'stable', notes: 'Recovering' },
-        { id: 3, name: 'Charlie', type: 'Rabbit', emoji: '🐰', status: 'healing', notes: 'Post-surgery' },
-        { id: 4, name: 'Bella', type: 'Dog', emoji: '🐕', status: 'adoptable', notes: 'Ready for home' },
-    ]);
+    const { animals } = useContext(AnimalsContext);
 
     const statusOrder = { critical: 0, stable: 1, healing: 2, adoptable: 3 };
     const sortedAnimals = [...animals].sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
