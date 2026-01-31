@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 import { AnimalsContext } from './AnimalsContext';
 
 export function AnimalsProvider({ children }) {
-    const [animals, setAnimals] = useState([]);
+    const [animals, setAnimals] = useState(() => {
+        const stored = localStorage.getItem('animals');
+        return stored ? JSON.parse(stored) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem('animals', JSON.stringify(animals));
+    }, [animals]);
 
     const addAnimal = (newAnimal) => {
         setAnimals(prev => [...prev, newAnimal]);
@@ -35,12 +42,6 @@ export function AnimalsProvider({ children }) {
         )
         );
     };
-
-    
-    useEffect(() => {
-  console.log('ANIMALS:', animals);
-}, [animals]);
-
 
 
     return (
