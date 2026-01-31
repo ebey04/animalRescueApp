@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 export default function AnimalProfile() {
     const { animalId } = useParams();
-    const { animals, updateAnimal, addNote } = useContext(AnimalsContext);
+    const { animals, updateAnimal, addNote, removeAnimal } = useContext(AnimalsContext);
 
     const animal = animals.find(a => a.id === animalId);
     if (!animal) return <p>Animal not found.</p>;
@@ -35,6 +35,12 @@ export default function AnimalProfile() {
         setNewNote('');
     };
 
+    const handleRemoveAnimal = () => {
+        if (window.confirm(`Are you sure you want to remove ${animal.name}?`)) {
+            removeAnimal(animalId);
+        }
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -45,6 +51,9 @@ export default function AnimalProfile() {
                     }}
                 >
                     {isEditing ? 'Save' : 'Edit'}
+                </Button>
+                <Button onClick={handleRemoveAnimal} className={styles.removeButton}>
+                    Remove Animal
                 </Button>
             </div>
 

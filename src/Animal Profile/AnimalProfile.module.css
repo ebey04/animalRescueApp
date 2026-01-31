@@ -8,6 +8,10 @@
     padding: .7rem 1.5rem;
 }
 
+.removeButton{
+    margin-left: 1rem;
+}
+
 .container{
     display: flex;
     flex-direction: column;

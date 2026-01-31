@@ -25,6 +25,11 @@ export function AnimalsProvider({ children }) {
         );
     };
 
+    const removeAnimal = (animalId) => {
+        setAnimals(prev => prev.filter(animal => animal.id !== animalId));
+    };
+
+
     const addNote = (animalId, noteText) => {
         const note = {
         text: noteText,
@@ -50,6 +55,7 @@ export function AnimalsProvider({ children }) {
             animals,
             addAnimal,
             updateAnimal,
+            removeAnimal,
             addNote,
         }}
         >
