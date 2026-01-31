@@ -15,8 +15,8 @@ export default function Navbar() {
                 </div>
                 <ul className={styles.navbarMenu}>
                     <li className={styles.navbarItem}>
-                        <Link to="/animals" className={styles.navbarLink}>
-                            Animals
+                        <Link to="/" className={styles.navbarLink}>
+                            Dashboard
                         </Link>
                     </li>
                     <li className={styles.navbarItem}>

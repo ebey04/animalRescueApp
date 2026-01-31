@@ -17,7 +17,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/intake-form" element={<IntakeForm />} />
-        <Route path="/animals" element={<Dashboard />} />
         <Route path="/animals/:animalId" element={<AnimalProfile />} />
       </Routes>
       <Footer />
