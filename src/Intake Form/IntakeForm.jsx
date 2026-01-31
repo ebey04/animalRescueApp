@@ -22,15 +22,35 @@ export default function IntakeForm() {
         status: ''
     };
 
+    const fileToBase64 = (file) =>
+        new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+    });
+
     const [formData, setFormData] = useState(initialState)
 
     const handleChange = (e) => {
-        const { name, value, type, files } = e.target
+        const { name, value } = e.target
         setFormData(prev => ({
             ...prev,
-            [name]: type === 'file' ? URL.createObjectURL(files[0]) : value
+            [name]:  value,
         }))
     }
+
+    const handlePhotoChange = async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const base64Image = await fileToBase64(file);
+
+        setFormData(prev => ({
+            ...prev,
+            photo: base64Image,
+        }));
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -112,7 +132,7 @@ export default function IntakeForm() {
 
                 <div className={styles.animalInput}>
                     <label htmlFor="photo">Photo</label>
-                    <input type="file" id="photo" name="photo" onChange={handleChange} accept="image/*" 
+                    <input type="file" id="photo" name="photo" onChange={handlePhotoChange} accept="image/*" 
                     className={styles.fileInput} />
                 </div>
 
