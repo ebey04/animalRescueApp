@@ -52,17 +52,23 @@ export default function IntakeForm() {
         }));
     };
 
+    const [successMessage, setSuccessMessage] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault()
         addAnimal(formData);
-
+        setSuccessMessage('Animal registered successfully!');
+        setTimeout(() => setSuccessMessage(''), 3000);
         setFormData(prev => ({
         ...initialState,
         id: generateId()
-    }))
+    }));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     return (
+        <div> 
+        {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
         <form onSubmit={handleSubmit} className={styles.formContainer}>
             <h1 className={styles.title}>Animal Intake Form</h1>
             <p>Please fill out the form below to register a new animal.</p>
@@ -136,9 +142,10 @@ export default function IntakeForm() {
                     className={styles.fileInput} />
                 </div>
 
-                <Button className={styles.submitBtn}>Submit</Button>
+                <Button type="submit" className={styles.submitBtn}>Submit</Button>
             </div>
 
         </form>
+        </div>
     )
 }
