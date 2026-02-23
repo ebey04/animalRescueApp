@@ -1,16 +1,40 @@
-# React + Vite
+# Rescue Track 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based animal intake and tracking dashboard designed for small rescue organizations to manage animal profiles and notes. 
 
-Currently, two official plugins are available:
+## Live Demo 🔗
+[Rescue Track]()  *in progress*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Overview 🐈
+Rescue Track centralizes animal intake and profile management for small rescue organizations. Staff can create, edit, and track animal records from a single dashboard, reducing paperwork friction and improving visibility across cases.
 
-## React Compiler
+This project was inspired by following rescue organizations on Instagram while mourning the loss of my cat, Archibald. Watching their daily work made me think about the operational burden small rescues carry — from intake paperwork to ongoing record management. Rescue Track was built to reduce that administrative burden by centralizing animal data in one system, allowing rescuers to spend more time doing what matters most — helping animals in need.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features ✔️
+- Create, edit and remove animal profiles
+- Persist animal data using localStorage
+- Editable intake form 
+- Dynamic routing with React Router
+- Context API for centralized state management 
+- Note-adding system per animal profile 
 
-## Expanding the ESLint configuration
+## Tech Stack 📦
+- React
+- React Router
+- Context API
+- localStorage
+- CSS Modules
+- Vite 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Architecture 🏛️
+The application uses React Context to manage global animal state. The provider wraps the application at the root level and exposes functions for adding, updating, deleting animals, and adding notes. Data is synced to localStorage via useEffect to persist state across sessions.
+
+## Challenges ⚽
+- Refactoring to React Context API to avoid unnecessary prop drilling 
+- Implementing localStorage in the Provider & preventing stale overwrites 
+- Creating a cohesive info-gathering-system balanced through the intake form & dashboard editing components 
+
+## Future Improvements 📋
+- Backend integration
+- Staff authentication 
+- Image upload with cloud storage 
