@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Link } from 'react-router-dom'
-import Navbar from './navbar/Navbar.jsx'
+import Navbar from './Navbar/Navbar.jsx'
 import Dashboard from './Dashboard/Dashboard.jsx'
 import IntakeForm from './Intake Form/IntakeForm.jsx'
 import Footer from './Footer/Footer.jsx'
