@@ -3,7 +3,7 @@
 A React-based animal intake and tracking dashboard designed for small rescue organizations to manage animal profiles and notes. 
 
 ## Live Demo 🔗
-[Rescue Track]()  *in progress*
+[Rescue Track](https://rescuetrack.netlify.app/) 
 
 ## Project Overview 🐈
 Rescue Track centralizes animal intake and profile management for small rescue organizations. Staff can create, edit, and track animal records from a single dashboard, reducing paperwork friction and improving visibility across cases.
