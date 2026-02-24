@@ -44,6 +44,10 @@ export default function IntakeForm() {
         const file = e.target.files[0];
         if (!file) return;
 
+        if (file.size > 1000000) {
+            alert('File size exceeds 1MB. Please choose a smaller image.');
+            return;
+        }
         const base64Image = await fileToBase64(file);
 
         setFormData(prev => ({
@@ -136,10 +140,11 @@ export default function IntakeForm() {
                     className={styles.textarea} />
                 </div>
 
-                <div className={styles.animalInput}>
+                <div className={`${styles.animalInput} ${styles.photoInput}`}>
                     <label htmlFor="photo">Photo</label>
                     <input type="file" id="photo" name="photo" onChange={handlePhotoChange} accept="image/*" 
                     className={styles.fileInput} />
+                    <p>Recommended image size: 500KB</p>
                 </div>
 
                 <Button type="submit" className={styles.submitBtn}>Submit</Button>

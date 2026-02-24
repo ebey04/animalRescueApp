@@ -27,6 +27,15 @@
     gap: 1rem;
 }
 
+.photoInput {
+    flex-direction: column;
+}
+
+.photoInput p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
 .submitBtn{
     max-width: fit-content;
     letter-spacing: .2rem;
