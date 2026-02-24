@@ -11,10 +11,10 @@ export default function Dashboard() {
     const sortedAnimals = [...animals].sort((a, b) => statusOrder[a.status] - statusOrder[b.status]);
 
     const statusColors = {
-        critical: '#ff4444',
-        stable: '#ffaa00',
-        healing: '#4488ff',
-        adoptable: '#44aa44',
+        critical: '#E00000',
+        stable: '#A917EE',
+        healing: '#0561FF',
+        adoptable: '#317C31',
     };
 
     return (

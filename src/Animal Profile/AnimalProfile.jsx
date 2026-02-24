@@ -107,10 +107,10 @@ export default function AnimalProfile() {
                                 value={draftAnimal.status}
                                 onChange={handleInputChange}
                             >
-                                <option value="available">Available</option>
-                                <option value="fostered">Fostered</option>
-                                <option value="adopted">Adopted</option>
-                                <option value="medical hold">Medical Hold</option>
+                                <option value="adoptable">Adoptable</option>
+                                <option value="stable">Stable</option>
+                                <option value="healing">Healing</option>
+                                <option value="critical">Critical</option>
                             </select>
                         </div>
                     </>
