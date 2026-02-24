@@ -1,5 +1,5 @@
 import styles from './Dashboard.module.css';
-import Button  from '../button/Button.jsx';
+import Button  from '../Button/Button.jsx';
 import { useContext } from 'react';
 import { AnimalsContext } from '../AnimalsContext.jsx';
 import { Link } from 'react-router-dom';
