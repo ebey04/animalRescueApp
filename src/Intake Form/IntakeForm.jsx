@@ -7,7 +7,7 @@ export default function IntakeForm() {
     const { addAnimal } = useContext(AnimalsContext);
 
     const generateId = () =>
-    `ANIMAL-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
+        `ANIMAL-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 
     const initialState = {
         id: generateId(),
@@ -15,7 +15,7 @@ export default function IntakeForm() {
         species: '',
         age: '',
         weight: '',
-        notes: '',
+        notes: [],
         photo: null,
         intakeDate: new Date().toISOString().split('T')[0],
         diagnosis: '',
@@ -133,12 +133,6 @@ export default function IntakeForm() {
                         </label>
                     ))}
                 </fieldset>
-
-                <div className={styles.animalInput}>
-                    <label htmlFor="notes">Notes</label>
-                    <textarea id="notes" name="notes" value={formData.notes} onChange={handleChange} 
-                    className={styles.textarea} />
-                </div>
 
                 <div className={`${styles.animalInput} ${styles.photoInput}`}>
                     <label htmlFor="photo">Photo</label>

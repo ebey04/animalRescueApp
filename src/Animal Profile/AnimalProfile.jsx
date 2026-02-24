@@ -9,7 +9,7 @@ export default function AnimalProfile() {
     const { animals, updateAnimal, addNote, removeAnimal } = useContext(AnimalsContext);
 
     const animal = animals.find(a => a.id === animalId);
-    if (!animal) return <p>Animal not found.</p>;
+    if (!animal) return <p className={styles.notFound}>Animal not found.</p>;
 
     const [draftAnimal, setDraftAnimal] = useState(animal);
     const [newNote, setNewNote] = useState('');
